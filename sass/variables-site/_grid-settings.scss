@@ -1,0 +1,58 @@
+// Neat Overrides
+$default-gutter: 30px;
+$default-columns: 12;
+
+$visual-grid: false;
+$visual-grid-index: back;
+$visual-grid-color: rgba(15, 16, 76, .2);
+
+// Screen size breakpoints
+$small-mobile-breakpoint-value: 350px;
+$mobile-breakpoint-value: 375px;
+$tablet-breakpoint-value: 768px;
+$tablet-landscape-breakpoint-value: 1024px;
+$desktop-breakpoint-value: 1280px;
+$large-desktop-breakpoint-value: 1400px;
+
+$neat-grid: (
+    columns: $default-columns,
+    gutter: $default-gutter
+) !default;
+
+// Breakpoints engaged
+$all-sizes: (
+    columns: $default-columns,
+    gutter: $default-gutter,
+    media: 'only screen',
+);
+
+// Breakpoints engaged
+$mobile: (
+    columns: $default-columns,
+    gutter: $default-gutter,
+    media: $mobile-breakpoint-value,
+);
+
+$tablet: (
+    columns: $default-columns,
+    gutter: $default-gutter,
+    media: $tablet-breakpoint-value,
+);
+
+$tablet-landscape: (
+    columns: $default-columns,
+    gutter: $default-gutter,
+    media: $tablet-landscape-breakpoint-value,
+);
+
+$desktop: (
+    columns: $default-columns,
+    gutter: $default-gutter,
+    media: $desktop-breakpoint-value,
+);
+
+$large-desktop: (
+    columns: $default-columns,
+    gutter: $default-gutter,
+    media: $large-desktop-breakpoint-value,
+);

@@ -1,0 +1,59 @@
+// Cross sells!
+
+.cross-sells {
+    h2:not(.woocommerce-loop-product__title) {
+        font-family: $font__header;
+    }
+    
+    @include grid-media($tablet-landscape) {
+        width: 50%;
+        float: left;
+        border-right: 3px solid $hot-pink;
+        padding-right: 30px;
+    }
+    
+    + .cart_totals {
+        @include grid-media($tablet-landscape) {
+            width: 50%;
+            float: left;
+            padding-left: 30px;
+        }
+    }
+    
+    @media screen and (min-width: 48em) {
+	ul.products {
+		li.product {
+			@include column-width(3);
+			float: left;
+			margin-right: $columns__margin;
+
+			&.first {
+				clear: none;
+			}
+
+			&.last {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.columns-1 {
+		ul.products {
+			li.product {
+				float: none;
+				width: 100%;
+			}
+		}
+	}
+
+	@for $i from 2 through 6 {
+		.columns-#{$i} {
+			ul.products {
+				li.product {
+					@include column-width( $i );
+				}
+			}
+		}
+	}
+}
+}

@@ -1,0 +1,56 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	width: 100%;
+	max-width: 320px;
+	border: 0;
+	border-color: $color__border-button;
+	border-radius: 0;
+	background: $color__background-button;
+	color: $white;
+	line-height: 1;
+	padding: 22px ;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 2.5px;
+
+	&:hover {
+		border-color: $color__border-button-hover;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+		outline: 0;
+	}
+}
+
+.button {
+	display: inline-block;
+	padding-top: 26px;
+	padding-right: 75px;
+	padding-bottom: 28px;
+	padding-left: 75px;
+	background-color: $hot-pink;
+	color: white;
+	text-transform: uppercase;
+	font-size: 14px;
+	text-align: center;
+	font-weight: 700;
+	letter-spacing: 3px;
+	
+	&:hover {
+		background-color: $hot-pink-hover;
+	}
+	
+	&--shop {
+		padding-top: 26px;
+		padding-right: 85px;
+		padding-bottom: 28px;
+		padding-left: 85px;
+		font-size: 18px;
+	}
+}

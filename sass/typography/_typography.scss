@@ -1,0 +1,60 @@
+ @font-face {
+    font-family: 'blowbrushregular';
+    src: url('/wp-content/themes/savage/vendor/blowbrush-webfont.woff2') format('woff2'),
+         url('/wp-content/themes/savage/vendor/blowbrush-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(1);
+	line-height: $font__line-height-body;
+	letter-spacing: 1px;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+
+.entry-title {
+    font-weight: normal;   
+}
+
+h1 {
+    &,
+    &.entry-title {
+        font-size: 32px;
+        font-family: $font__header;
+        font-weight: normal;
+        line-height: 54px;
+        
+        @include grid-media($tablet-landscape) {
+            font-size: 48px;
+        }
+    }
+    
+    &.featured__title {
+        font-size: 32px;
+        
+        @include grid-media($tablet-landscape) {
+            font-size: 48px;
+        }
+    }
+}
+
+h1 {
+    font-size: 48px;
+}
+
+
+@import "headings";
+
+@import "copy";

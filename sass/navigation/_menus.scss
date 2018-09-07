@@ -1,0 +1,170 @@
+.main-navigation {
+	clear: both;
+	display: none;
+	float: left;
+	width: 100%;
+	
+	@include grid-media($tablet-landscape) {
+		display: block;
+	}
+	
+	.menu-toggle {
+		background-color: $black;
+		text-align: left;
+		padding: 10px;
+		
+		@include grid-media($mobile) {
+			padding: 22px;
+		}
+		
+		.menu-icon {
+			fill: $hot-pink;
+			width: 36px;
+    		height: 26px;
+		}
+	}
+	
+	> div {
+		text-align: center;
+	}
+
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+		text-align: left;
+
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 100%;
+			left: -999em;
+			z-index: 99999;
+			font-size: 13px;
+			
+			@include grid-media($tablet-landscape) {
+				background-color: $black;
+			}
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					@include grid-media($tablet-landscape) {
+						left: 100%;
+					}
+				}
+				
+				a {
+					color: $hot-pink;
+					
+					&:visited {
+						color: $hot-pink;
+					}
+					
+					&:hover {
+						color: $white;
+					}
+				}
+			}
+
+			a {
+				width: 200px;
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			@include grid-media($tablet-landscape) {
+				left: auto;
+			}
+		}
+	}
+
+	li {
+		@include grid-media($tablet-landscape) {
+			float: left;
+			position: relative;	
+		}
+
+		&:hover > a,
+		&.focus > a {
+			color: $white;
+			outline: none;
+		}
+	}
+	
+	> li {
+		&.current-menu-item {
+            a {
+                color: $white;
+            }
+        }
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+	
+	.menu-item {
+		&.menu--account {
+			@include grid-media($tablet-landscape) {
+				display: none;
+			}
+		}
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+		color: $white;
+		
+		&:visited {
+			color: $white;
+		}
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@include grid-media($tablet-landscape) {
+	.menu-toggle {
+		display: none;
+	}
+	
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}

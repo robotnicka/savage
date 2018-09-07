@@ -1,0 +1,117 @@
+// Footer styles
+
+.footer-navigation {
+    @include grid-container;
+    margin-bottom: 100px;
+    padding: 0 6%;
+    
+    @include grid-media($tablet-landscape) {
+        margin-bottom: 125px;
+    }
+    
+    &__shop,
+    &__info,
+    &__social,
+    &__newsletter {
+        margin-bottom: 75px;
+        text-align: center;
+        
+        @include grid-media($tablet-landscape) {
+            @include grid-column(3);
+            margin-bottom: 0;
+            padding: 0;
+            text-align: left;
+        }
+    }
+    
+    &__social {
+        ul {
+            margin: 0;
+            padding: 0;
+            
+            li {
+                display: inline-block;
+                
+                + li {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    
+    &__newsletter {
+        input {
+            max-width: 375px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+    
+    .menu {
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none;
+        
+        a {
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 13px;
+            
+            &,
+            &:visited {
+                color: $gray;
+            }
+        }
+    }
+    
+    h3 {
+        margin-bottom: 35px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+}
+
+.site-footer {
+    background-color: $color__background-secondary;
+    color: $white;
+    
+    input {
+        &[type='email'] {
+            width: 100%;
+            margin-bottom: 35px;
+            background-color: $color__background-tertiary;
+            color: $gray;
+        }
+        
+        &[type='submit'] {
+            border: 2px solid $color__border-input;
+            background-color: transparent;
+            color: $hot-pink;
+        }
+    }
+}
+
+.site-info {
+    background-color: $color__background-tertiary;
+    color: rgba($white, .35);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    letter-spacing: 3.5px;
+}
+
+.footer-logo {
+    margin-top: 80px;
+    margin-bottom: 70px;
+    
+    &__icon {
+        display: block;
+        width: 50px;
+        height: 50px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

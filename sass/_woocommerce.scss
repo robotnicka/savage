@@ -1,0 +1,38 @@
+/*
+Theme Name: savage
+
+WooCommerce styles override
+*/
+
+/**
+ * WooCommerce color variables
+ */
+$woocommerce__color-error: #e2401c;
+$woocommerce__color-success: #eec8dc;
+$woocommerce__color-info: #3D9CD2;
+
+// Woo Imports
+
+// Shop tables
+@import "shop/tables";
+
+// Products
+@import "shop/products";
+
+// Single product
+@import "shop/single-product";
+
+// Checkout
+@import "shop/checkout";
+
+// General WooCommerce components
+@import "shop/components";
+
+// Cross sells
+@import "shop/cross-sells";
+
+// WooCommerce widgets
+@import "shop/widgets";
+
+// Account
+@import "shop/account";

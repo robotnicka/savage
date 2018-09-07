@@ -1,0 +1,109 @@
+.featured {
+    &__title {
+		font-family: $font__header;
+		color: $white;
+		text-transform: uppercase;
+		margin-top: 0;
+		margin-right: auto;
+		margin-bottom: 0;
+		margin-left: auto;
+		max-width: 1600px;
+		padding-left: 5%;
+		
+		@include grid-media($tablet-landscape) {
+		    padding-left: 1%;
+		}
+	}
+	
+	&__background {
+		position: absolute;
+	    height: 100%;
+	    width: 100%;
+	    overflow: hidden;
+	    
+	    svg {
+	    	height: 100%;
+	    	max-width: none;
+	    	
+	    	@include grid-media($desktop) {
+	    		height: auto;
+	    		max-width: 100%;
+	    	}
+	    }
+	}
+	
+	&__header {
+	    background-color: $hot-pink;
+	    margin-top: -50px;
+	}
+	
+	&__container {
+		position: relative;
+	    text-align: center;
+	    
+	    .button--shop {
+			position: relative;
+			z-index: 1;
+			margin-bottom: -40px;
+		}
+	}
+	
+	&__list {
+	    @include grid-container;
+	    padding-top: 50px;
+	    padding-bottom: 50px;
+	    margin-bottom: 0;
+	    
+	    li {
+	        display: block;
+	        float: left;
+	        width: calc(100% - 20px);
+	        margin-right: 10px;
+	        margin-bottom: 30px;
+	        margin-left: 10px;
+	        
+	        @include grid-media($tablet-landscape) {
+	            width: calc(50% - 20px);
+	            margin-bottom: 0;
+	        }
+	        
+	        @include grid-media($desktop) {
+	            width: calc(25% - 20px);
+	        }
+	    }
+	}
+	
+	&__image-container {
+	    @include image-ratio(object-fit--square);
+	    
+	    &::before {
+	    	position: absolute;
+    		width: 100%;
+    		height: 100%;
+    		top: 0;
+    		left: 0;
+    		content: '';
+	    	transition: opacity .3s ease-in;
+	    	opacity: 0;
+	    	z-index: 1;
+	    	pointer-events: none;
+	    }
+	    
+	    &:hover {
+	    	&::before {
+	    		position: absolute;
+	    		background-image: linear-gradient($hot-pink, blue);
+	    		opacity: .8;
+	    		mix-blend-mode: color;
+	    	}
+	    }
+	}
+	
+    ul {
+        margin-right: auto;
+        margin-left: auto;   
+        padding-left: 0;
+        list-style: none;
+        max-width: 1600px;
+    }
+}

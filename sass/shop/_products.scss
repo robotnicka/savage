@@ -1,0 +1,284 @@
+// Products
+
+.woocommerce {
+    &__single-product-intro { 
+        @include grid-container;
+    }
+    
+    &.single-product {
+        .quantity {
+            margin-bottom: 25px;
+        }
+        
+        .product_meta {
+            margin-top: 45px;
+        }
+        
+        .product_title {
+            margin-top: 0;
+            font-size: 48px;
+        }
+    }
+    
+    .woocommerce-product-gallery,
+    .entry-summary {
+        @include grid-media($tablet-landscape) {
+        	@include grid-column(6);
+        }
+    }
+    
+    .entry-summary {
+    	@include grid-media($tablet-landscape) {
+    		margin-left: 60px;
+    	}
+    }
+}
+
+// Product page 'low stock'
+.woocommerce-variation-availability {
+	p {
+		color: $hot-pink;
+		font-weight: bold;
+	}
+}
+
+.woocommerce-tabs.wc-tabs-wrapper {
+    @include grid-container;	
+}
+
+.reset_variations {
+	margin-left: 10px;
+}
+
+.woocommerce-product-gallery__image {
+	&:not(.flex-active-slide) {
+		@include image-ratio(object-fit--square);
+	}
+}
+
+.woocommerce-product-gallery__wrapper {
+	
+}
+
+.woocommerce .woocommerce-product-gallery {
+	margin-left: 0;
+}
+
+.products {
+	&.related {
+		border-top: 3px solid $pink;
+		margin-top: 40px;
+		
+		> h2 {
+			font-family: $font__header;
+			font-size: 32px;
+		}
+	}
+	
+	.product {
+		text-transform: uppercase;
+		
+		a { 
+			text-decoration: none;
+		}
+		
+		.price {
+			color: $shadegray;
+		}
+	}
+	
+	.product__image-wrapper {
+		position: relative;
+	}
+	
+	a {
+	 	.product__image-wrapper {
+	 		&::before {
+		    	position: absolute;
+	    		width: 100%;
+	    		height: 100%;
+	    		top: 0;
+	    		left: 0;
+	    		content: '';
+		    	transition: opacity .3s ease-in;
+		    	opacity: 0;
+		    	z-index: 1;
+		    	pointer-events: none;
+		    }
+	 	}
+	    
+	    &:hover {
+	    	.product__image-wrapper {
+	    		&::before {
+		    		position: absolute;
+		    		background-image: linear-gradient($hot-pink, blue);
+		    		opacity: .8;
+		    		mix-blend-mode: color;
+		    	}
+	    	}
+	    }
+	}
+}
+
+.product-category {
+	.category__image-wrapper {
+		position: relative;
+	}
+	
+	a {
+	 	.category__image-wrapper {
+	 		&::before {
+		    	position: absolute;
+	    		width: 100%;
+	    		height: 100%;
+	    		top: 0;
+	    		left: 0;
+	    		content: '';
+		    	transition: opacity .3s ease-in;
+		    	opacity: 0;
+		    	z-index: 1;
+		    	pointer-events: none;
+		    }
+	 	}
+	    
+	    &:hover {
+	    	.category__image-wrapper {
+	    		&::before {
+		    		position: absolute;
+		    		background-image: linear-gradient($hot-pink, blue);
+		    		opacity: .8;
+		    		mix-blend-mode: color;
+		    	}
+	    	}
+	    }
+	}
+}
+
+.product {
+	.price {
+		font-weight: 700;
+	}
+	
+	.product_meta {
+		font-size: 14px;
+		text-transform: uppercase;
+		
+		span {
+			+ span {
+				margin-left: 20px;
+			}
+		}
+	}
+}
+
+.single_add_to_cart_button {
+	&.button {
+		margin-top: 40px;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}
+
+.woocommerce-breadcrumb {
+	margin-bottom: 40px;
+}
+
+.shop__results-sort-container {
+	@include grid-container;
+	margin-bottom: 30px;
+	
+	.woocommerce-result-count {
+		font-size: 14px;
+		text-transform: uppercase;
+	
+		@include grid-media($tablet-landscape) {
+			margin-top: 0;
+			width: 50%;
+			float: left;
+		}
+	}
+	
+	.woocommerce-ordering {
+		@include grid-media($tablet-landscape) {
+			width: 50%;
+			float: left;
+			text-align: right;
+		}
+	}
+}
+
+.woocommerce-loop-category__title {
+	font-size: 18px;
+	
+	mark {
+		background-color: white;
+		color: $hot-pink;
+	}
+}
+ 
+ul.products {
+	@include clearfix;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+
+	li.product {
+		list-style: none;
+		position: relative;
+		margin-bottom: 2em;
+
+		.woocommerce-loop-product__title {
+			font-size: 1rem;
+		}
+
+		img {
+			display: block;
+		}
+
+		.button {
+			display: block;
+		}
+	}
+	
+	.category__image-wrapper,
+	.product__image-wrapper {
+		@include image-ratio(object-fit--square);
+	}
+}
+
+@media screen and (min-width: 48em) {
+	ul.products {
+		li.product {
+			@include column-width(3);
+			float: left;
+			margin-right: $columns__margin;
+
+			&.first {
+				clear: both;
+			}
+
+			&.last {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.columns-1 {
+		ul.products {
+			li.product {
+				float: none;
+				width: 100%;
+			}
+		}
+	}
+
+	@for $i from 2 through 6 {
+		.columns-#{$i} {
+			ul.products {
+				li.product {
+					@include column-width( $i );
+				}
+			}
+		}
+	}
+}

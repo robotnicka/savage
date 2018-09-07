@@ -1,0 +1,16 @@
+{
+  "name": "savage",
+  "version": "1.0.0",
+  "description": "custom wordpress theme built for savage sparrow studios",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emily Mentrek",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
+    "node-neat": "^2.0.0-beta.0"
+  }
+}

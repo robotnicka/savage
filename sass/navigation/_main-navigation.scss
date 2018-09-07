@@ -1,0 +1,59 @@
+// Main navigation
+
+.main-navigation {
+    text-transform: uppercase;
+    
+    @include grid-media($tablet-landscape) {
+        background-color: $color__background-tertiary;
+    }
+    
+    ul {
+        @include grid-media($tablet-landscape) {
+            display: inline-block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+    
+    li {
+        font-size: 14px;
+        
+        @include grid-media($tablet) {
+            font-size: 18px;
+        }
+        
+        &.menu-item-has-children {
+            &:hover {
+                @include grid-media($tablet-landscape) {
+                    background-color: $black;
+                    border-top: 4px solid $hot-pink;
+                    
+                    a {
+                        padding-top: 21px;
+                    }
+                }
+            }
+        }
+    }
+    
+    a {
+        @extend %font-main-bold;
+        color: $color__main-navigation-link;
+        padding-top: 25px;
+        padding-right: 25px;
+        padding-bottom: 25px;
+        padding-left: 25px;
+        
+        &:visited {
+            color: $color__main-navigation-link;
+        }
+        
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+.nav-menu {
+    @include grid-container;
+}
