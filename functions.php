@@ -212,6 +212,38 @@ function savage_custom_variation_price( $price, $product ) {
     return $price;
 }
 
+
+// Replace jquery
+add_action( 'init', function(){
+	if (  ! is_admin()) {
+		if( is_ssl() ){
+			$protocol = 'https';
+		}else {
+			$protocol = 'http';
+		}
+
+		/** @var WP_Scripts $wp_scripts */
+		global  $wp_scripts;
+		/** @var _WP_Dependency $core */
+		$core = $wp_scripts->registered[ 'jquery-core' ];
+		$core_version = $core->ver;
+		$core->src = "$protocol://cdnjs.cloudflare.com/ajax/libs/jquery/$core_version/jquery.min.js";
+		if ( WP_DEBUG ) {
+			/** @var _WP_Dependency $migrate */
+			$migrate         = $wp_scripts->registered[ 'jquery-migrate' ];
+			$migrate_version = $migrate->ver;
+			$migrate->src    = "$protocol://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/$migrate_version/jquery-migrate.js";
+		}else{
+			/** @var _WP_Dependency $jquery */
+			$jquery = $wp_scripts->registered[ 'jquery' ];
+			$jquery->deps = [ 'jquery-core' ];
+		}
+
+    }
+
+
+},11 );
+
 // Change the 'Only # left in stock' message on the WooCommerce product page to
 // simply show 'Low Stock'.
 function savage_custom_stock_totals($availability_html, $availability_text, $product) {
