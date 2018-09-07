@@ -41,7 +41,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-.main-navigation a, .site-account .cart-count {
+.main-navigation a, .site-account .cart-count.cart-count-active {
   font-family: 'Lato', sans-serif;
   font-weight: 700; }
 
@@ -2349,7 +2349,7 @@ object {
     text-decoration: none; }
   .site-account a:not(.site-account__account-link) {
     display: inline-block; }
-  .site-account .cart-count {
+  .site-account .cart-count.cart-count-active {
     display: inline-block;
     height: 35px;
     width: 35px;
@@ -2359,7 +2359,7 @@ object {
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 55.9 55.9'%3e%3cpath fill='%23e72b91' d='M55.8 21.6a1 1 0 0 0-.8-.7l-18-2.6-8.2-16.4a1 1 0 0 0-1.8 0l-8 16.4L.8 20.9a1 1 0 0 0-.6 1.7l13 12.8-3 18a1 1 0 0 0 1.5 1L27.9 46l16.2 8.5a1 1 0 0 0 1.5-1l-3.1-18 13-12.8c.3-.3.4-.7.3-1z'/%3e%3c/svg%3e ");
     margin-left: -14px; }
     @media only screen and (min-width: 375px) {
-      .site-account .cart-count {
+      .site-account .cart-count.cart-count-active {
         height: 45px;
         width: 45px;
         font-size: 14px;

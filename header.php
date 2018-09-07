@@ -81,7 +81,7 @@
 				 	<a class="site-account__account-link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login / Register','woothemes'); ?>"><?php _e('Login / Register','woothemes'); ?></a>
 				 <?php } 
 				?>
-				<a href="<?php echo wc_get_cart_url() ?>"><span class="cart-icon"><?php include 'assets/cart-icon.php' ?></span><?php if (WC()->cart->get_cart_contents_count() > 0) { ?><span class="cart-count"><?php echo WC()->cart->get_cart_contents_count(); ?> </span><?php } ?></a>
+				<a href="<?php echo wc_get_cart_url() ?>"><span class="cart-icon"><?php include 'assets/cart-icon.php' ?></span><span class="cart-count"></span></a>
 				<div class="header__graphic">
 					<?php 
 	                    include('assets/header-graphic.php');

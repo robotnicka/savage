@@ -7,6 +7,8 @@
  */
 
 ( function( $ ) {
+	
+	$(document.body).trigger('wc_fragment_refresh');
 
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {

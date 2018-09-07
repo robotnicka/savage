@@ -212,6 +212,16 @@ function savage_custom_variation_price( $price, $product ) {
     return $price;
 }
 
+add_filter( 'woocommerce_add_to_cart_fragments', 'savage_cart_count_fragments', 10, 1 );
+ 
+function savage_cart_count_fragments( $fragments ) {
+    $count = WC()->cart->get_cart_contents_count();
+    if($count > 0) $span = '<span class="cart-count cart-count-active">'.$count.'</span>';
+    else $span = '<span class="cart-count></span>';
+    $fragments['span.cart-count'] = $span;
+    
+    return $fragments;
+}
 
 // Replace jquery
 add_action( 'init', function(){
