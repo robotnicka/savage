@@ -21,39 +21,28 @@
     }
     
     @media screen and (min-width: 48em) {
-	ul.products {
-		li.product {
-			@include column-width(3);
-			float: left;
-			margin-right: $columns__margin;
-
-			&.first {
-				clear: none;
-			}
-
-			&.last {
-				margin-right: 0;
-			}
-		}
-	}
-
-	.columns-1 {
 		ul.products {
 			li.product {
-				float: none;
-				width: 100%;
+				float: left;
 			}
 		}
-	}
-
-	@for $i from 2 through 6 {
-		.columns-#{$i} {
+	
+		.columns-1 {
 			ul.products {
 				li.product {
-					@include column-width( $i );
+					float: none;
+					width: 100%;
 				}
 			}
 		}
+		
+		.columns-2 {
+			ul.products {
+				li.product {
+					width: 48%;
+				}
+			}
+		}
+	
 	}
-}
 }

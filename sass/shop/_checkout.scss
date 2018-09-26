@@ -40,6 +40,22 @@
 	@include grid-container;
 }
 
+.woocommerce-checkout-review-order {
+	width: 50%;
+}
+
+.wc_payment_methods.payment_methods {
+	li {
+		list-style-type: none;
+	}	
+}
+
+.wc_payment_method.payment_method_paypal {
+	img {
+		display: none;
+	}
+}
+
 .shop_table {
 	.coupon {
 		&,

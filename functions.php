@@ -254,6 +254,7 @@ add_action( 'init', function(){
 
 },11 );
 
+
 // Change the 'Only # left in stock' message on the WooCommerce product page to
 // simply show 'Low Stock'.
 function savage_custom_stock_totals($availability_html, $availability_text, $product) {
