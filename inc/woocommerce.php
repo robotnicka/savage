@@ -77,7 +77,13 @@ add_filter( 'body_class', 'savage_woocommerce_active_body_class' );
 add_action( 'woocommerce_before_add_to_cart_quantity', 'savage_echo_qty_front_add_cart' );
  
 function savage_echo_qty_front_add_cart() {
- echo '<div class="qty">Quantity: </div>'; 
+	global $product;
+	
+	if ( $product->get_stock_quantity() <= 1 && is_product() ) { // if stock is low
+		echo '';
+	} else {
+		echo '<div class="qty">Quantity: </div>'; 
+	}
 }
 
 /**
