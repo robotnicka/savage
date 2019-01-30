@@ -1302,6 +1302,12 @@ ul, ol {
     opacity: .8;
     mix-blend-mode: color; }
 
+.subscribe {
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 20px;
+  text-transform: uppercase; }
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/

@@ -141,6 +141,8 @@ get_header();
             </div>
         </div>
     </div>
-
+    <div class="subscribe">
+        Find me on <a href="https://www.patreon.com/savagesparrow" target="_blank" rel="noopener">Patreon</a>!
+    </div>
 <?php
 get_footer();
