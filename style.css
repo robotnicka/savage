@@ -1264,6 +1264,9 @@ ul, ol {
     content: "";
     display: block; }
 
+.recent-posts .recent-posts__container ul {
+  padding-bottom: 35px; }
+
 .recent-posts h1 {
   text-align: center;
   margin-top: 105px; }
