@@ -1175,7 +1175,8 @@ ul, ol {
   padding-top: 90px;
   padding-bottom: 90px; }
   .recent-posts__container ul {
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    padding-bottom: 35px; }
 
 .recent-posts__button-container {
   margin-bottom: -130px;
