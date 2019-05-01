@@ -30,7 +30,7 @@ if ( post_password_required() ) {
 }
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class(); ?>>
-
+	
 	<div class="woocommerce__single-product-intro">
 		
 		<?php
@@ -61,7 +61,7 @@ if ( post_password_required() ) {
 			?>
 		</div>
 	</div>
-	
+
 	<?php
 		/**
 		 * Hook: woocommerce_after_single_product_summary.
