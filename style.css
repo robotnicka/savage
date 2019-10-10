@@ -1744,6 +1744,9 @@ ul.products {
   width: 150px;
   padding-right: 50px; }
 
+.variations_form.cart {
+  display: none; }
+
 /**
  * Header cart
  */
