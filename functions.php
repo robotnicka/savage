@@ -79,8 +79,14 @@ if ( ! function_exists( 'savage_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+		
+		// Woocommerce product gallery things
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
 	}
 endif;
+
 add_action( 'after_setup_theme', 'savage_setup' );
 
 /**
@@ -237,7 +243,11 @@ add_action( 'init', function(){
 		/** @var _WP_Dependency $core */
 		$core = $wp_scripts->registered[ 'jquery-core' ];
 		$core_version = $core->ver;
+		
+		if(substr($core_version,-3) == '-wp') $core_version = substr($core_version,0,-3);
+		
 		$core->src = "$protocol://cdnjs.cloudflare.com/ajax/libs/jquery/$core_version/jquery.min.js";
+		
 		if ( WP_DEBUG ) {
 			/** @var _WP_Dependency $migrate */
 			$migrate         = $wp_scripts->registered[ 'jquery-migrate' ];
@@ -272,5 +282,7 @@ add_action( 'woocommerce_before_shop_loop', function(){
     echo '</div>';
 }, 31 );
 
+
 // Remove WooCommerce Add to Cart/Read More button from shop root
-remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+// remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+
