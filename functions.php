@@ -282,7 +282,5 @@ add_action( 'woocommerce_before_shop_loop', function(){
     echo '</div>';
 }, 31 );
 
-
 // Remove WooCommerce Add to Cart/Read More button from shop root
-// remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
