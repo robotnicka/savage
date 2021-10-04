@@ -89,6 +89,16 @@ endif;
 
 add_action( 'after_setup_theme', 'savage_setup' );
 
+
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+
+function woo_remove_product_tabs( $tabs ) {
+
+    unset( $tabs['additional_information'] );  	// Remove the additional information tab
+
+    return $tabs;
+}
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -283,4 +293,4 @@ add_action( 'woocommerce_before_shop_loop', function(){
 }, 31 );
 
 // Remove WooCommerce Add to Cart/Read More button from shop root
-remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+// remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
